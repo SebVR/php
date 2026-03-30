@@ -5,7 +5,7 @@
 > Répondez directement dans ce fichier en remplaçant les lignes `_Votre réponse ici_`.  
 > Écrivez votre nom et prénom ci-dessous.
 
-**Nom et prénom :** _______________________
+**Nom et prénom :** Karraz Ayoub
 
 ---
 
@@ -15,7 +15,10 @@
 
 Donnez la syntaxe complète de `isset()`, expliquez quand elle retourne `TRUE` et quand elle retourne `FALSE`.
 
-_Votre réponse ici_
+isset(mixed $var, mixed ...$var)
+
+Return true si la variable a été déclarée et que sa valeur est différente de null.
+Return false si la variable n'a pas été déclarée, lorsqu'elle vaut null, ou lorsqu'elle a été détruite avec unset().
 
 ---
 
@@ -23,7 +26,10 @@ _Votre réponse ici_
 
 Donnez la syntaxe complète de `empty()`, expliquez quand elle retourne `TRUE` et quand elle retourne `FALSE`.
 
-_Votre réponse ici_
+empty(mixed $var)
+
+Return true si la variable vaut : "", "0", 0, 0.0, null, false, [], ou si elle n'est pas déclarée.
+Return false si la variable contient une valeur non vide : chaîne non vide, entier non nul, tableau non vide.
 
 ---
 
@@ -31,8 +37,8 @@ _Votre réponse ici_
 
 Quelle est la différence entre `isset()` et `empty()` lorsqu'une variable vaut `0` ? Justifiez votre réponse.
 
-_Votre réponse ici_
-
+isset() retourne TRUE car la variable est déclarée et n'est pas null.
+empty() retourne TRUE car 0 est considéré comme une valeur vide.
 ---
 
 ### d) Tableau comparatif *(16 pts)*
@@ -41,14 +47,14 @@ Complétez ce tableau (TRUE ou FALSE) :
 
 | Valeur de `$var` | `isset($var)` | `empty($var)` |
 |---|---|---|
-| `$var = 0;` | ? | ? |
-| `$var = "";` | ? | ? |
-| `$var = "bonjour";` | ? | ? |
-| Variable non déclarée | ? | ? |
-| `$var = "0";` | ? | ? |
-| `$var = null;` | ? | ? |
-| `$var = false;` | ? | ? |
-| `$var = [];` | ? | ? |
+| `$var = 0;` | true | true |
+| `$var = "";` | true | true |
+| `$var = "bonjour";` | true | false |
+| Variable non déclarée | false | true |
+| `$var = "0";` | true | true |
+| `$var = null;` | false | true |
+| `$var = false;` | true | true |
+| `$var = [];` | true | true |
 
 ---
 
@@ -58,8 +64,10 @@ Complétez ce tableau (TRUE ou FALSE) :
 
 Expliquez la différence entre la méthode `GET` et la méthode `POST` pour le passage de variables en PHP. Dans quel cas préfère-t-on utiliser `GET` ? Quelle est la limite de caractères de `GET` ?
 
-_Votre réponse ici_
-
+GET passe les variables dans l'URL tandis que POST les passe dans le corps de la requête HTTP.
+Niveau sécurité GET est plus faible que POST.
+GET a une limite de plus ou moins 2048 caractères alors que POST n'en a pas.
+On va utiliser GET lorsque la reqète n'a pas besoin de mot de passe ou de données personnelles.
 ---
 
 ### b) Passage de paramètres dans l'URL *(15 pts)*
@@ -68,24 +76,35 @@ Donnez la syntaxe permettant de passer les variables `categorie` (valeur : "php"
 
 Montrez ensuite comment récupérer ces deux variables en PHP côté serveur.
 
-_Votre réponse ici_
+catalogue.php?categorie=php&page=2
 
+$categorie = $_GET['categorie'];
+$page = $_GET['page'];
 ---
 
 ### c) Les modes d'ouverture de `fopen()` *(20 pts)*
 
 Citez et expliquez les **6 modes d'ouverture** possibles de la fonction `fopen()`. Pour chacun, précisez : lecture, écriture, ou les deux ; et où est placé le pointeur.
 
-_Votre réponse ici_
-
+- Lecture (r) -> pointeur au début;
+- Ecriture (w) -> pointeur au début;
+- Ecriture (a) -> pointeur à la fin;
+- Ecriture (x) -> pointeur au début;
+- Lecture (r+) -> pointeur au début;
+- Lecture (w+) -> pointeur au début;
 ---
 
 ### d) La fonction `header()` *(10 pts)*
 
 À quoi sert la fonction `header()` ? Donnez un exemple concret. Quelle contrainte très importante doit-on respecter lors de son utilisation, et pourquoi ?
 
-_Votre réponse ici_
+header() permet d'envoyer des en-têtes HTTP au navigateur
 
+Exemple :
+<?php
+header("Location: connexion.php");
+exit();
+?>
 ---
 
 ## 📊 Barème
