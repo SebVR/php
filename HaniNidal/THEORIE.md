@@ -16,7 +16,8 @@
 Donnez la syntaxe complète de `isset()`, expliquez quand elle retourne `TRUE` et quand elle retourne `FALSE`.
 
 _Votre réponse ici_
-
+isset($variable)
+isset retourne true si la variable existe et retoune false si il y a pas de variable
 ---
 
 ### b) La fonction `empty()` *(8 pts)*
@@ -24,7 +25,7 @@ _Votre réponse ici_
 Donnez la syntaxe complète de `empty()`, expliquez quand elle retourne `TRUE` et quand elle retourne `FALSE`.
 
 _Votre réponse ici_
-
+empty($variable)
 ---
 
 ### c) Différence fondamentale *(8 pts)*
@@ -32,6 +33,7 @@ _Votre réponse ici_
 Quelle est la différence entre `isset()` et `empty()` lorsqu'une variable vaut `0` ? Justifiez votre réponse.
 
 _Votre réponse ici_
+les deux retourne true car isset() vérifie seulement si la variable existe mais empty() vérifie aussi si la valeur est vide/fausse.
 
 ---
 
@@ -41,14 +43,14 @@ Complétez ce tableau (TRUE ou FALSE) :
 
 | Valeur de `$var` | `isset($var)` | `empty($var)` |
 |---|---|---|
-| `$var = 0;` | ? | ? |
-| `$var = "";` | ? | ? |
-| `$var = "bonjour";` | ? | ? |
-| Variable non déclarée | ? | ? |
-| `$var = "0";` | ? | ? |
-| `$var = null;` | ? | ? |
-| `$var = false;` | ? | ? |
-| `$var = [];` | ? | ? |
+| `$var = 0;` | true | true |
+| `$var = "";` | true | true |
+| `$var = "bonjour";` | true | false |
+| Variable non déclarée | false | true |
+| `$var = "0";` | true | true |
+| `$var = null;` | false | true |
+| `$var = false;` | true | true |
+| `$var = [];` | false | false |
 
 ---
 
@@ -59,7 +61,8 @@ Complétez ce tableau (TRUE ou FALSE) :
 Expliquez la différence entre la méthode `GET` et la méthode `POST` pour le passage de variables en PHP. Dans quel cas préfère-t-on utiliser `GET` ? Quelle est la limite de caractères de `GET` ?
 
 _Votre réponse ici_
-
+GET envoyer les données dans l'url une limite de 1000 char 
+POST envoyer les données sans limite de char
 ---
 
 ### b) Passage de paramètres dans l'URL *(15 pts)*
@@ -69,7 +72,7 @@ Donnez la syntaxe permettant de passer les variables `categorie` (valeur : "php"
 Montrez ensuite comment récupérer ces deux variables en PHP côté serveur.
 
 _Votre réponse ici_
-
+G
 ---
 
 ### c) Les modes d'ouverture de `fopen()` *(20 pts)*
@@ -77,7 +80,9 @@ _Votre réponse ici_
 Citez et expliquez les **6 modes d'ouverture** possibles de la fonction `fopen()`. Pour chacun, précisez : lecture, écriture, ou les deux ; et où est placé le pointeur.
 
 _Votre réponse ici_
-
+r = read 
+w = write 
+a = append 
 ---
 
 ### d) La fonction `header()` *(10 pts)*
@@ -85,7 +90,7 @@ _Votre réponse ici_
 À quoi sert la fonction `header()` ? Donnez un exemple concret. Quelle contrainte très importante doit-on respecter lors de son utilisation, et pourquoi ?
 
 _Votre réponse ici_
-
+l'entete 
 ---
 
 ## 📊 Barème

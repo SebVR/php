@@ -1,0 +1,3 @@
+Jean | jean@example.com | Débutant | 2026-01-10
+Marie | marie@example.com | Intermédiaire | 2026-01-10
+Pierre | pierre@example.com | Avancé | 2026-01-11
