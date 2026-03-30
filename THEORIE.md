@@ -1,11 +1,9 @@
-**Total : 100 points — Seuil de réussite : 50/100**  
-**Durée estimée : ~30 minutes**  
-**Documents autorisés : Aucun**
+
 
 > Répondez directement dans ce fichier en remplaçant les lignes `_Votre réponse ici_`.  
 > Écrivez votre nom et prénom ci-dessous.
 
-**Nom et prénom :** _______________________
+**Nom et prénom :** ___________KEMO FRANC LOIC ____________
 
 ---
 
@@ -15,7 +13,9 @@
 
 Donnez la syntaxe complète de `isset()`, expliquez quand elle retourne `TRUE` et quand elle retourne `FALSE`.
 
-_Votre réponse ici_
+la syntaxe de isset() est isset($variable)
+
+la fonction retourne TRUE  si la variable existe et n'est pas égale a null et elle retourne false si : la variable n'existe pas ou si la valeur est nulle
 
 ---
 
@@ -23,7 +23,11 @@ _Votre réponse ici_
 
 Donnez la syntaxe complète de `empty()`, expliquez quand elle retourne `TRUE` et quand elle retourne `FALSE`.
 
-_Votre réponse ici_
+la syntaxe de empty () est : empty($variable)
+
+la fonction retourne TRUE si la variable est vide
+
+elle retourne FALSE si la variable contient une valeur noon vide 
 
 ---
 
@@ -31,8 +35,13 @@ _Votre réponse ici_
 
 Quelle est la différence entre `isset()` et `empty()` lorsqu'une variable vaut `0` ? Justifiez votre réponse.
 
-_Votre réponse ici_
+la différence fondamentale si une variable vaut 0 : isset($var) retourne true car la variable existe et n'est pas null
 
+empty($var) retourne TRUE car 0 est considéré comme une valeur vide en PHP
+la différence fondamentale est donc:
+
+- isset() vérifie si la variable existe et n'est pas null
+- empty() vérifie si la variable est vide 
 ---
 
 ### d) Tableau comparatif *(16 pts)*
@@ -41,14 +50,14 @@ Complétez ce tableau (TRUE ou FALSE) :
 
 | Valeur de `$var` | `isset($var)` | `empty($var)` |
 |---|---|---|
-| `$var = 0;` | ? | ? |
-| `$var = "";` | ? | ? |
-| `$var = "bonjour";` | ? | ? |
-| Variable non déclarée | ? | ? |
-| `$var = "0";` | ? | ? |
-| `$var = null;` | ? | ? |
-| `$var = false;` | ? | ? |
-| `$var = [];` | ? | ? |
+| `$var = 0;` | true| true|
+| `$var = "";` | true | true |
+| `$var = "bonjour";` | ?true| false|
+| Variable non déclarée | false | true |
+| `$var = "0";` | true | true |
+| `$var = null;` | false | true |
+| `$var = false;` | true| true |
+| `$var = [];` | true| true |
 
 ---
 
@@ -58,7 +67,11 @@ Complétez ce tableau (TRUE ou FALSE) :
 
 Expliquez la différence entre la méthode `GET` et la méthode `POST` pour le passage de variables en PHP. Dans quel cas préfère-t-on utiliser `GET` ? Quelle est la limite de caractères de `GET` ?
 
-_Votre réponse ici_
+la methode GET transmet les données dan l'URL et la méthode POST transmet les données dans le corps de la requete HTTP
+
+on utilise GET pour les recherches, les filtres , les liens partageables.
+
+la limite de GET dépend du navigateur mais est généralement autour de 2000 carractères 
 
 ---
 
@@ -68,7 +81,9 @@ Donnez la syntaxe permettant de passer les variables `categorie` (valeur : "php"
 
 Montrez ensuite comment récupérer ces deux variables en PHP côté serveur.
 
-_Votre réponse ici_
+passage des variables dans l'URL : catalogue.php?categorie=php&page=2
+
+recupération en PHP: $categorie = $_GET["categore"];     $page = $_GET["page"];
 
 ---
 
@@ -76,7 +91,31 @@ _Votre réponse ici_
 
 Citez et expliquez les **6 modes d'ouverture** possibles de la fonction `fopen()`. Pour chacun, précisez : lecture, écriture, ou les deux ; et où est placé le pointeur.
 
-_Votre réponse ici_
+- "r" lecture seule 
+le fichier doit exister 
+pointeur au debut 
+
+- "r+" lecture et ecriture 
+le fichier doit exister 
+pointeur au debut
+
+- "W" ecriture seule 
+cree le fichier s'il n'existe pas 
+supprime le contenu s'il existe 
+pointeur au debut 
+
+- "W+" lecture et ecriture 
+cree le fichier s'il n'existe pas 
+supprime le contenu s'il existe 
+pointeur au debut 
+
+- "a" ecriture seule
+cree le fichier s'il n'existe pas 
+pointeur a la fin 
+
+- a+" lecture et ecriture 
+cree le fichier s'il n'existe pas 
+pointeur a la fin 
 
 ---
 
@@ -84,7 +123,7 @@ _Votre réponse ici_
 
 À quoi sert la fonction `header()` ? Donnez un exemple concret. Quelle contrainte très importante doit-on respecter lors de son utilisation, et pourquoi ?
 
-_Votre réponse ici_
+la fonction header permet d'envoyer un entete http
 
 ---
 
@@ -103,5 +142,8 @@ _Votre réponse ici_
 | **TOTAL** | | **100** |
 
 ---
+
+> ⚠️ Seuil de réussite : **50/100 minimum**
+
 
 > ⚠️ Seuil de réussite : **50/100 minimum**
