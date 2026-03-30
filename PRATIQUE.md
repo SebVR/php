@@ -6,7 +6,7 @@
 > Pour le code from scratch (Q2) : créez les fichiers PHP directement dans votre dossier.  
 > Écrivez votre nom et prénom ci-dessous.
 
-**Nom et prénom :** _______________________
+**Nom et prénom :** Mbengo Marc_______________________
 
 ---
 
@@ -96,14 +96,14 @@ Remplacez chaque `?` par votre réponse :
 
 | N° | Votre réponse |
 |---|---|
-| 1 | ? |
-| 2 | ? |
-| 3 | ? |
-| 4 | ? |
-| 5 | ? |
-| 6 | ? |
+| 1 | isset |
+| 2 | empty |
+| 3 | str_replace |
+| 4 | $_GET |
+| 5 | fopen|
+| 6 | $_POST |
 | 7 | ? |
-| 8 | ? |
+| 8 | fclose |
 | 9 | ? |
 | 10 | ? |
 | 11 | ? |
